@@ -1,52 +1,76 @@
-.main{
-  padding: 20px;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(90deg, #ff0000 0%, #ffffff 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.main-content{
+
+.main {
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-content {
   display: grid;
-  grid-template: 40px 40px / 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 40px 40px;
   gap: 17px;
 }
-.box{
+
+.box {
   border-radius: 5px;
-  border: solid 0.15px gray;
+  border: solid 0.15px #808080;
   padding-left: 10px;
   font-size: 16px;
+  width: 100%;
 }
-.box::placeholder{
+
+.box::placeholder {
   font-size: 16px;
 }
-.meme-button{
+
+.meme-button {
   grid-column: 1 / -1;
-  background-color: purple;
-  background: linear-gradient(90.41deg, #711F8D 1.14%, #A818DA);
+  background: linear-gradient(90.41deg, #8a8fdc 1.14%, #38da18);
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  padding: 0;
+  padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #ffffff;
+  font-size: 20px;
 }
-.meme-button:hover{
-  background-color: rgb(143, 0, 143);
+
+.meme-button:hover {
+  background-color: #8f008f;
   transition: 0.15s;
-  box-shadow: 10px 1px 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
-.image{
+
+.image {
   margin-left: 10px;
   width: 20px;
 }
 
-
 /* Meme and text */
-.meme-image{
+.meme-image {
   width: 100%;
   margin-top: 20px;
   border-radius: 10px;
 }
-.meme-part{
+
+.meme-part {
   position: relative;
 }
+
 .meme-text {
   position: absolute;
   width: 90%;
@@ -55,27 +79,28 @@
   transform: translateX(-50%);
   margin: 15px 0;
   padding: 50px 5px;
-  font-family: impact, sans-serif;
+  font-family: "Impact", sans-serif;
   font-size: 40px;
   text-transform: uppercase;
-  color: white;
+  color: #ffffff;
   letter-spacing: 1px;
-  text-shadow:
-      2px 2px 0 #000,
-      -2px -2px 0 #000,
-      2px -2px 0 #000,
-      -2px 2px 0 #000,
-      0 2px 0 #000,
-      2px 0 0 #000,
-      0 -2px 0 #000,
-      -2px 0 0 #000,
-      2px 2px 5px #000;
+  text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000,
+    -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000,
+    2px 2px 5px #000;
 }
 
-.bottom{
+.bottom {
   bottom: 0;
 }
 
-.top{
+.top {
   top: 0;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+  .main-content {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 40px);
+  }
 }
